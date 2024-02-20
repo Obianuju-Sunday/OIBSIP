@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     height: 100%;
 }
 
@@ -19,11 +20,13 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #08070E;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
 }
 
-
 .right-section {
-    background-color: #E7EAE9;
+    background-color: #08070E;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -35,22 +38,21 @@ body, html {
     max-height: 75%;
 }
 
-.left-section {
-    flex: 1;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-.left-section h1{
+.left-section h1 {
     font-size: 50px;
     font-family: sans-serif;
 }
 
-.left-section p {
-    display: block;
-    margin-top: 10px; 
+.quote-container {
+    color: #08070E;
+    background-color: #E7EAE9;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.quote-container h1 {
+    padding: 20rem;
+    line-height: 2em;
 }
