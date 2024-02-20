@@ -56,3 +56,40 @@ html {
     padding: 20rem;
     line-height: 2em;
 }
+
+
+#tribute-bio {
+    background-color: #E7EAE9;
+    height: 100vh;
+}
+
+.bio-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.bio-wrapper {
+    max-width: 800px;
+    text-align: center;
+}
+
+.bio-heading h1 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 3em;
+}
+
+.bio-content p {
+    margin-top: 20px;
+    text-align: left;
+    font-weight: bold;  
+    font-size: 1.1em;
+}
+
+.bio-content p span {
+    line-height: 3em;
+    width: 20em;
+
+}
