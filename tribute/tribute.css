@@ -91,5 +91,36 @@ html {
 .bio-content p span {
     line-height: 3em;
     width: 20em;
+}
 
+#tribute-timeline {
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    background-color: #08070E;
+    height: 100vh;
+}
+
+#tribute-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.timeline-section,
+.chronology-section {
+    max-width: 800px;
+    width: 70%;
+    padding: 0 20px;
+}
+
+.text-container{
+    text-align: left;
+    line-height: 2em;
+}
+
+.text-container {
+    font-weight: bold;  
+    font-size: 1em;
 }
