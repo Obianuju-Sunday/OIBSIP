@@ -94,33 +94,37 @@ html {
 }
 
 #tribute-timeline {
-    display: flex;
-    justify-content: space-between;
     color: #FFFFFF;
     background-color: #08070E;
-    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-#tribute-timeline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.timeline-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-heading {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
 }
 
 .timeline-section,
 .chronology-section {
-    max-width: 800px;
-    width: 70%;
-    padding: 0 20px;
-}
-
-.text-container{
-    text-align: left;
-    line-height: 2em;
+    margin-bottom: 20px;
 }
 
 .text-container {
-    font-weight: bold;  
-    font-size: 1em;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .timeline-section,
+    .chronology-section {
+        width: 100%;
+    }
 }
