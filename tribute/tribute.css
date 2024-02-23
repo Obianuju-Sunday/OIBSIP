@@ -243,23 +243,47 @@ html {
 }
 
 /* MEDIA QUERIES FRO SMALLER SCREENS */
+
+@media screen and (max-width: 770px) {
+
+
+}
+
+/* Media query for smaller screens */
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .right-section img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .timeline-heading h1 {
+        font-size: 1.5em;
+    }
+
+    .text-container h1 {
+        font-size: 1.5em;
+    }
+
+    .text-container p {
+        font-size: 0.9em;
+    }
+
+    .social-links p {
+        font-size: 1.2em;
+    }
 
     .timeline-section,
     .chronology-section {
         width: 100%;
-    }
-}
-
-@media screen and (max-width: 770px) {
-
-    .footer-left,
-    .footer-right {
-        flex-basis: 100%;
-        font-size: 14px;
-    }
-
-    .footer-img {
-        top: 25%;
     }
 }
