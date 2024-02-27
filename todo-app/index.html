@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App</title>
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>todo</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <main>
-
-        <!-- Input form for adding new todo items -->
-        <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Add a new todo">
+    <div class="container">
+        <div class="new-to-do">
+                <textarea id="todo-description" placeholder="todo description"></textarea>
             <button type="submit">Add</button>
-        </form>
-
-        <!-- List to show existing todos -->
-        <ul id="todo-list">
-            <!-- Todo items will be dynamically added and shown here -->
-        </ul>
-        
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Obianuju. All rights reserved.</p>
-    </footer>
-
-    <script src="app.js"></script>
-
+        </div>
+        <div class="to-do">
+            <h2>To-do List</h2>
+        </div>
+    </div>
 </body>
+
 </html>

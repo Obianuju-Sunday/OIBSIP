@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-style: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4% 10%;
+    color: #fff;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    min-height: 100vh;
+}
+
+#todo-description{
+    min-width: 30em;
+    min-height: 20em;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    font-size: 16px;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 15px 11em;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+}
+
+ button:hover {
+    background-color: #1be72c;
+}
+
+
+
+
+
+
+
+
+
