@@ -1,26 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>todo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="new-to-do">
-            <textarea id="todo-description" placeholder="todo description"></textarea>
-            <button type="submit" id="add-btn">Add</button>
-        </div>
-            <div class="todos" id="todo-list">
+    <header>
+        <h1>My Todo List</h1>
+        <form action="" id="new-task-form">
+            <input 
+                type="text" 
+                id="new-task-input" 
+                placeholder="What do you have planned"
+            >
+            <input 
+            type="submit" 
+            id="new-task-submit" 
+            placeholder="Add task"
+        >
 
-                <!-- Todo will be added here -->
+        </form>
+    </header>
+
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+            <div id="tasks">
+                <div class="task">
+                    <div class="content">
+                        <input 
+                            type="text"
+                            class="text"
+                            readonly
+                            placeholder="My shiny task"
+                        >
+                    </div>
+                    <div class="actions">
+                        <button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </button>
+                        <button class="delete"><i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-    </div>
-
+        </section>
+    </main>
+    
     <script src="script.js"></script>
 </body>
-
 </html>
