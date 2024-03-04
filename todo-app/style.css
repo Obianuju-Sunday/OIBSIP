@@ -64,8 +64,6 @@ button {
     font-size: 1.25rem;
     font-weight: 700;
     background-image: linear-gradient(135deg, #153677, #4e085f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     cursor: pointer;
     transition: 0.4s;
 }
@@ -80,8 +78,73 @@ button {
 
 main {
     flex: 1 1 0%;
-    /* padding: 2rem 3rem ; */
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+}
+
+.task-list{
+    padding: 1rem;
+}
+
+.task-list h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+#tasks .task{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task .content{
+    color: var(--purple);
+    font-size: 1.25rem;
+    width: 1005;
+    display: block;
+    transition: 0.4s;
+}
+
+#tasks .task .content .text:not(:read-only){
+    color: var(--dark);
+}
+
+#tasks .task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+#tasks .actions button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.task .actions button:hover {
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+}
+
+.task .actions button:active {
+    opacity: 0.6;
+}
+
+.task .actions .edit{
+    background-image: linear-gradient(135deg, #153677, #4e085f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete{
+    color: crimson;
 }
