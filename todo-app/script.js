@@ -1,38 +1,59 @@
-// // // const todoDescription = document.getElementById('todo-description');
-// // // const addBtn = document.getElementById('add-btn');
 
 
-// // // document.querySelector("#add-btn").addEventListener("click", function(){
-// // //     if(todoDescription.value === ''){
-// // //         document.querySelector("#add-btn").style.display = "none";
-// // //     }
-// // // })
+
+window.addEventListener('load', () => {
+    const form = document.getElementById('new-task-form');
+    const input = document.getElementById('new-task-input');
+    const list_el = document.getElementById('tasks');
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const addBtn = document.getElementById('add-btn');
-//     const todoDescription = document.getElementById('todo-description');
-//     const todoList = document.getElementById('todo-list');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const task = input.value;
 
-//     addBtn.addEventListener('click', () => {
-
-
-//         const description = todoDescription.value.trim();
-
-//         if (description !== '') {
-
-//             // Create a new todo item
-//             const todoItem = document.createElement('div');
-//             todoItem.textContent = description;
-//             todoItem.classList.add('todo-item');
-
-//             todoList.appendChild(todoItem);
-
-//             todoDescription.value = '';
-//         } else {
-//             alert('Please enter a todo description.');
-//         }
-//     });
-// });
+        if (!task) {
+            alert('Please write your todo!');
+            return;
+        }
 
 
+        const task_el = document.createElement('div');
+        task_el.classList.add('task');
+
+        const task_content_el = document.createElement('div');
+        task_content_el.classList.add('content');
+
+        task_el.appendChild(task_content_el)
+
+        const task_input_el = document.createElement('input');
+        task_input_el.classList.add('text');
+        task_input_el.type = 'text';
+        task_input_el.value = task;
+        task_input_el.setAttribute('readonly', 'readonly')
+
+        task_content_el.appendChild(task_input_el);
+
+        const task_actions_el = document.createElement('div');
+        task_actions_el.classList.add('actions');
+
+        const task_edit_el = document.createElement('button');
+        task_edit_el.classList.add('edit');
+        task_edit_el.innerHTML = `<i class="fa fa-pencil-square" aria-hidden="true"></i>`
+
+        const task_delete_el = document.createElement('button');
+        task_delete_el.classList.add('delete');
+        task_delete_el.innerHTML = `{<i class="fa fa-trash" aria-hidden="true"></i>}`
+
+
+        list_el.appendChild(task_el)
+
+        // task = '';
+
+
+
+
+    })
+
+
+
+})
