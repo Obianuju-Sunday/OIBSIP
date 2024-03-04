@@ -116,7 +116,7 @@ main {
     margin: 0 -0.5rem;
 }
 
-#tasks .actions button{
+#tasks .actions .task-button{
     cursor: pointer;
     margin: 0 0.5rem;
     font-size: 1.125rem;
@@ -125,13 +125,25 @@ main {
     transition: 0.3s;
 }
 
-.task .actions .delete:hover {
+/* .task .actions .delete:hover .task-button{
     border-radius: 5rem;
     background-color: red;
     color: var(--light);
 }
 
-.task .actions .edit:hover{
+.task .actions .edit:hover .task-button{
+    border-radius: 1rem;
+    background-color: var(--dark-blue);
+    color: var(--light);
+} */
+
+.task .delete:hover .task-button {
+    border-radius: 5rem;
+    background-color: red;
+    color: var(--light);
+}
+
+.task .edit:hover .task-button {
     border-radius: 1rem;
     background-color: var(--dark-blue);
     color: var(--light);
