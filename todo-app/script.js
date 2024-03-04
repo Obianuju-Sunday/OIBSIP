@@ -39,16 +39,17 @@ window.addEventListener('load', () => {
         const task_edit_el = document.createElement('button');
         task_edit_el.classList.add('edit');
         task_edit_el.innerHTML = `<i class="fa fa-pencil-square" aria-hidden="true"></i>`
+        task_el.appendChild(task_edit_el);
+
 
         const task_delete_el = document.createElement('button');
-        task_delete_el.classList.add('delete');
-        task_delete_el.innerHTML = `{<i class="fa fa-trash" aria-hidden="true"></i>}`
+        task_delete_el.classList.add('delete', '.task-.actions-.delete:hover');
+        task_delete_el.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
+        task_el.appendChild(task_delete_el);
+
 
 
         list_el.appendChild(task_el)
-
-        // task = '';
-
 
 
 
