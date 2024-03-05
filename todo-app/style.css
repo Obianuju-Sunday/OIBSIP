@@ -99,16 +99,16 @@ main {
     margin-bottom: 1rem;
 }
 
-#tasks .task .content{
-    color: var(--dark-blue);
-    font-size: 1rem;
-    width: 1005;
-    display: block;
-    transition: 0.4s;
+#tasks .task .content {
+    flex: 1 1 0%;
 }
 
-#tasks .task .content .text:not(:read-only){
-    color: var(--light);
+#tasks .task .content .text{
+    color: var(--dark-blue);
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
 }
 
 #tasks .task .actions {

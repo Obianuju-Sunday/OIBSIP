@@ -1,6 +1,3 @@
-
-
-
 window.addEventListener('load', () => {
     const form = document.getElementById('new-task-form');
     const input = document.getElementById('new-task-input');
@@ -44,14 +41,22 @@ window.addEventListener('load', () => {
 
         const task_delete_el = document.createElement('button');
         task_delete_el.classList.add('delete');
-        task_delete_el.id.add('tasks')
         task_delete_el.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
         task_el.appendChild(task_delete_el);
 
-
         list_el.appendChild(task_el)
+        input.value = '';
 
-
+        task_edit_el.addEventListener('click', () => {
+            if (task_edit_el.innerHTML == `<i class="fa fa-pencil-square" aria-hidden="true"></i>`) {
+                task_input_el.removeAttribute('readonly')
+                task_input_el.focus();
+                task_edit_el.innerText = 'Save'
+            } else {
+                task_input_el.setAttribute('readonly', 'readonly');
+                task_edit_el.innerHTML = `<i class="fa fa-pencil-square" aria-hidden="true"></i>`
+            }
+        })
 
     })
 
