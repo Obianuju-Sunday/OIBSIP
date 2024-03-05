@@ -58,6 +58,11 @@ window.addEventListener('load', () => {
             }
         })
 
+        task_delete_el.addEventListener('click', () => {
+            if(task_delete_el.innerHTML == `<i class="fa fa-trash" aria-hidden="true"></i>`){
+                list_el.removeChild(task_el)
+            }
+        })
     })
 
 
