@@ -3,7 +3,6 @@ window.addEventListener('load', () => {
     const input = document.getElementById('new-task-input');
     const list_el = document.getElementById('tasks');
 
-
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const task = input.value;
@@ -12,7 +11,6 @@ window.addEventListener('load', () => {
             alert('Please write your todo!');
             return;
         }
-
 
         const task_el = document.createElement('div');
         task_el.classList.add('task');
@@ -45,7 +43,15 @@ window.addEventListener('load', () => {
         task_el.appendChild(task_delete_el);
 
         list_el.appendChild(task_el)
+
+        
         input.value = '';
+        // saveTodoList();
+
+        const task_complete_el = document.createElement('button');
+        task_complete_el.classList.add('task-button');
+        task_complete_el.innerHTML = `<i class="fa fa-check" aria-hidden="true"></i>`;
+        task_el.appendChild(task_complete_el);
 
         task_edit_el.addEventListener('click', () => {
             if (task_edit_el.innerHTML == `<i class="fa fa-pencil-square" aria-hidden="true"></i>`) {
@@ -59,12 +65,18 @@ window.addEventListener('load', () => {
         })
 
         task_delete_el.addEventListener('click', () => {
-            if(task_delete_el.innerHTML == `<i class="fa fa-trash" aria-hidden="true"></i>`){
+            if (task_delete_el.innerHTML == `<i class="fa fa-trash" aria-hidden="true"></i>`) {
                 list_el.removeChild(task_el)
             }
         })
-    })
 
+        task_complete_el.addEventListener('click', () => {
+            if(task_complete_el.innerHTML == `<i class="fa fa-check" aria-hidden="true"></i>`) {
+                task_complete_el.appendChild(task_el)
+            }
+        })
+
+    })
 
 
 })

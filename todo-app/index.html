@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,43 +9,52 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Fira+Sans:ital,wght@0,400;0,600;1,400&family=Montserrat:ital,wght@0,400;0,600;1,400&family=Noto+Sans&family=Nunito:wght@300&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:wght@500&family=Poppins:wght@400;500;600&family=Twinkle+Star&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Fira+Sans:ital,wght@0,400;0,600;1,400&family=Montserrat:ital,wght@0,400;0,600;1,400&family=Noto+Sans&family=Nunito:wght@300&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:wght@500&family=Poppins:wght@400;500;600&family=Twinkle+Star&display=swap"
+        rel="stylesheet">
 
     <!-- FONTS AWESOME LINK -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- OWN CSS LINK -->
-    
+
     <link rel="stylesheet" href="style.css">
 
 
 </head>
+
 <body>
     <header>
         <h1>My Todo List</h1>
         <form action="" id="new-task-form">
-            <input 
-                type="text" 
-                id="new-task-input" 
-                placeholder="What do you have planned"
-            >
-            <input 
-            type="submit" 
-            id="new-task-submit" 
-            placeholder="Add task"
-        >
+            <input type="text" id="new-task-input" placeholder="What do you have planned">
+            <input type="submit" id="new-task-submit" placeholder="Add task">
 
         </form>
     </header>
 
     <main>
+
         <section class="task-list">
-            <h2>Tasks</h2>
+            <h2>Pending Tasks</h2>
             <div id="tasks">
-                <!-- <div class="task">
+                <!-- Pending tasks will be added here -->
+            </div>
+        </section>
+
+        <section class="task-list">
+            <h2>Completed Tasks</h2>
+            <div id="completed-tasks">
+                <!-- Completed tasks will be added here -->
+            </div>
+        </section>
+        <!-- <section class="task-list">
+            <h2>Pending Tasks</h2>
+            <div id="tasks"> -->
+        <!-- <div class="task">
                     <div class="content">
                         <input 
                             type="text"
@@ -62,10 +71,12 @@
                         </button>
                     </div>
                 </div> -->
-            </div>
+        <!-- </div> -->
+
         </section>
     </main>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>
