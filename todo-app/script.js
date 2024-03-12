@@ -73,18 +73,20 @@ window.addEventListener('load', () => {
         task_complete_el.addEventListener('click', () => {
             if (task_complete_el.innerHTML == `<i class="fa fa-check" aria-hidden="true"></i>`) {
                 list_el.removeChild(task_el);
-                // task_el.classList.add('task');
 
                 task_el.classList.add('completed-task');
                 task_input_el.setAttribute('readonly', 'readonly');
                 task_el.removeChild(task_edit_el);
-                task_el.removeChild(task_complete_el)
+                task_el.removeChild(task_complete_el);
 
+                task_delete_el.addEventListener('click', () => {
+                    document.getElementById('completed-tasks').removeChild(task_el);
+                });
 
                 document.getElementById('completed-tasks').appendChild(task_el);
+
             }
         })
-
 
     })
 
