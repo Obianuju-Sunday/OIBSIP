@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
 
         list_el.appendChild(task_el)
 
-        
+
         input.value = '';
         // saveTodoList();
 
@@ -71,10 +71,18 @@ window.addEventListener('load', () => {
         })
 
         task_complete_el.addEventListener('click', () => {
-            if(task_complete_el.innerHTML == `<i class="fa fa-check" aria-hidden="true"></i>`) {
-                task_complete_el.appendChild(task_el)
+            if (task_complete_el.innerHTML == `<i class="fa fa-check" aria-hidden="true"></i>`) {
+                list_el.removeChild(task_el);
+
+                task_el.classList.add('completed-task');
+                task_input_el.setAttribute('readonly', 'readonly');
+                task_el.removeChild(task_edit_el);
+                task_el.removeChild(task_complete_el)
+
+                document.getElementById('completed-tasks').appendChild(task_el);
             }
         })
+
 
     })
 
