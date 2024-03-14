@@ -10,41 +10,32 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
-function signUp() {
-    // Get user information from form
 
-    var fullName = document.getElementById('fullName').value;
-    var userName = document.getElementById('userName').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var passwordConfirm = document.getElementById('passwordConfirm').value;
 
-    const signUpApi = 'https://invest-iq.onrender.com/api/signup';
-    // const signUpApi = 'http://localhost:3000/api/auth/signup';
+document.addEventListener('DOMContentLoaded', function() {
+    const signUpForm = document.getElementById('sign-up');
+    const signInForm = document.getElementById('sign-in');
 
-    var requestConfig = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            userName: userName,
-            fullName: fullName,
-            email: email,
-            password: password,
-            passwordConfirm: passwordConfirm
-        })
-    };
+    signUpForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('userName').value;
+        const password = document.getElementById('password').value;
+        localStorage.setItem('userName', username);
+        localStorage.setItem('password', password);
+        alert('Signup successful! Please sign in.');
+    });
 
-    fetch(signUpApi, requestConfig)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            alert('Signup successful! User details saved to database.')
-        })
-        .catch(error => {
-            console.error(error);
-            alert('Signup failed. Please try again.');
-        });
-}
-
+    signInForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('userName').value;
+        const password = document.getElementById('password').value;
+        const storedUsername = localStorage.getItem('userName');
+        const storedPassword = localStorage.getItem('password');
+        if (username === storedUsername && password === storedPassword) {
+            alert('Sign In successful! Redirecting to authenticated page.');
+            window.location.href = 'page.html';
+        } else {
+            alert('Invalid username or password');
+        }
+    });
+});
