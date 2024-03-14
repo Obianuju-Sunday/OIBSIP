@@ -14,13 +14,13 @@ function signUp() {
     // Get user information from form
 
     var fullName = document.getElementById('fullName').value;
-    var userName = document.getElementById('username').value;
+    var userName = document.getElementById('userName').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var passwordConfirm = document.getElementById('passwordConfirm').value;
 
-    // const signUpApi = 'https://invest-iq.onrender.com/api/signup';
-    const signUpApi = 'http://localhost:3000/api/auth/signup';
+    const signUpApi = 'https://invest-iq.onrender.com/api/signup';
+    // const signUpApi = 'http://localhost:3000/api/auth/signup';
 
     var requestConfig = {
         method: 'POST',
@@ -28,7 +28,7 @@ function signUp() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: userName,
+            userName: userName,
             fullName: fullName,
             email: email,
             password: password,
@@ -43,7 +43,7 @@ function signUp() {
             alert('Signup successful! User details saved to database.')
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error(error);
             alert('Signup failed. Please try again.');
         });
 }
