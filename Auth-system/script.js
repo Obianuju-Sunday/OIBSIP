@@ -12,31 +12,41 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
-// Check if user is already signed up (e.g., after page refresh)
-// const storedUsername = localStorage.getItem('userName');
-// const storedPassword = localStorage.getItem('password');
+function hashPassword(password) {
+    const sha256 = new jsSHA('SHA-256', 'TEXT');
+    sha256.update(password);
+    return sha256.getHash('HEX');
+  }
+  
+  signUpBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('signUp-userName').value;
+      const password = document.getElementById('signUp-password').value;
+      
+      const hashedPassword = hashPassword(password);
 
+      console.log('Hashed Password:', hashedPassword); 
+  
+      localStorage.setItem('userName', username);
+      localStorage.setItem('password', hashedPassword);
 
-signUpBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('signUp-userName').value;
-    const password = document.getElementById('signUp-password').value;
-    localStorage.setItem('userName', username);
-    localStorage.setItem('password', password);
-    alert('Signup successful! Please sign in.');
-});
-
-
-signInBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('signIn-userName').value;
-    const password = document.getElementById('signIn-password').value;
-    const storedUsername = localStorage.getItem('userName');
-    const storedPassword = localStorage.getItem('password');
-    if (username === storedUsername && password === storedPassword) {
-        alert('Sign In successful! Redirecting to authenticated page.');
-        window.location.href = 'page.html';
-    } else {
-        alert('Invalid username or password');
-    }
-});
+      alert('Signup successful! Please sign in.');
+  });
+  
+  signInBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('signIn-userName').value;
+      const password = document.getElementById('signIn-password').value;
+      const storedUsername = localStorage.getItem('userName');
+      const storedPassword = localStorage.getItem('password');
+  
+      const hashedEnteredPassword = hashPassword(password);
+  
+      if (username === storedUsername && hashedEnteredPassword === storedPassword) {
+          alert('Sign In successful! Redirecting to authenticated page.');
+          window.location.href = 'page.html';
+      } else {
+          alert('Invalid username or password');
+      }
+  });
+  
